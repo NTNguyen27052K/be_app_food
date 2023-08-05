@@ -37,3 +37,26 @@ CREATE TABLE sub_food(
 	
     FOREIGN KEY (food_id) REFERENCES food(food_id)
 );
+
+
+
+CREATE TABLE rate_res(
+	user_id INT,
+	res_id INT, 
+	amount INT,
+	date_rate DATETIME,
+	
+    FOREIGN KEY (user_id) REFERENCES user(user_id),
+    FOREIGN KEY (res_id) REFERENCES restaurant(res_id)
+);
+
+CREATE TABLE order_food(
+	user_id INT,
+	food_id INT, 
+	amount INT,
+	code VARCHAR(200),
+	arr_sub_id VARCHAR(200),
+	
+    FOREIGN KEY (user_id) REFERENCES user(user_id),
+    FOREIGN KEY (food_id) REFERENCES food(food_id)
+);
