@@ -38,6 +38,8 @@ CREATE TABLE sub_food(
     FOREIGN KEY (food_id) REFERENCES food(food_id)
 );
 
+SELECT user_id , COUNT(user_id) as count_order FROM `order`
+
 
 
 CREATE TABLE rate_res(
@@ -50,7 +52,7 @@ CREATE TABLE rate_res(
     FOREIGN KEY (res_id) REFERENCES restaurant(res_id)
 );
 
-CREATE TABLE order_food(
+CREATE TABLE `order`(
 	user_id INT,
 	food_id INT, 
 	amount INT,
